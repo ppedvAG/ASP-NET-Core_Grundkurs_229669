@@ -1,0 +1,39 @@
+﻿@using AspNetClass.DataAccess.Models;
+@model IEnumerable<AspNetClass.DataAccess.Models.Customer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Customers</title>
+</head>
+<body>
+	<h2>
+		All Customers
+	</h2>
+	<table>
+		<thead>
+			<tr>Id</tr>
+			<tr>Company Name</tr>
+			<tr>City</tr>
+			<tr>Country</tr>
+		</thead>
+		<tbody>
+			@foreach (Customer cust in Model)
+			{
+				<tr>
+					<td>@cust.CustomerId</td>
+					<td>@cust.CompanyName</td>
+					<td>@cust.City</td>
+					<td>@cust.Country</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</body>
+</html>
