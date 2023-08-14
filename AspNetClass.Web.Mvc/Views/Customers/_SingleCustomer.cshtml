@@ -1,0 +1,20 @@
+﻿<!--
+	Partielle View:
+	Ermöglicht, das aufteilen von großen Views in kleinere Teile & Wiederverwendung von einzelnen Teilen von Views
+-->
+
+@model Customer
+
+<tr>
+	<td>@Model.CustomerId</td>  <!--Model statt einem bestimmten Variablennamen-->
+	<td>@Model.CompanyName</td>
+	<td>@Model.City</td>
+	<td>@Model.Country</td>
+	<td>
+		<a asp-action="Edit" asp-controller="Customers" asp-route-id="@Model.CustomerId">Edit</a>
+		<br>
+		<a asp-action="Delete" asp-controller="Customers" asp-route-id="@Model.CustomerId">Delete</a>
+		<br>
+		<a asp-action="Details" asp-controller="Customers" asp-route-id="@Model.CustomerId">Details</a>
+	</td>
+</tr>

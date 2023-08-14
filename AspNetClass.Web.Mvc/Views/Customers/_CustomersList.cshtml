@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Customer>
+
+<h2>
+	All Customers
+</h2>
+<table>
+	<thead>
+		<tr>Id</tr>
+		<tr>Company Name</tr>
+		<tr>City</tr>
+		<tr>Country</tr>
+	</thead>
+	<tbody>
+		@foreach (Customer cust in Model)
+		{
+			@await Html.PartialAsync("_SingleCustomer", cust); //Html.PartialAsync: Lädt eine Partielle View in die derzeitige View hinein, kann auch ein Model als Parameter bekommen
+		}
+	</tbody>
+</table>

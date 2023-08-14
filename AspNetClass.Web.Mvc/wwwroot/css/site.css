@@ -1,0 +1,36 @@
+﻿body
+{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #000;
+}
+
+h1,h2,h3,h4,h5,h6,h7
+{
+	color: lightblue
+}
+
+nav
+{
+	background-color: #ff6a00;
+	color: #000;
+	height: 60px;
+}
+
+nav a
+{
+	color: #fff;
+	font-size: 20pt;
+	margin: 10px;
+	text-decoration: none;
+	height: 50px;
+	vertical-align: middle;
+	align-content: center;
+	border: 1px dotted transparent;
+}
+
+footer
+{
+	background-color: aliceblue;
+	color: #000;
+	height: 40px;
+}

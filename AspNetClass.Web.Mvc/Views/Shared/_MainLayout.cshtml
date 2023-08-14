@@ -1,0 +1,48 @@
+﻿<!--
+	Die _MainLayout.cshtml Datei gibt ein Layout für alle Views vor
+	Diese Datei muss _MainLayout.cshtml heißen
+	Wird auf jede View angewandt
+	Muss im Shared Ordner liegen
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link href="~/css/site.css" rel="stylesheet"/>
+	<title>
+		@if (ViewBag.Title != null)
+		{
+			@ViewBag.Title //Mit <text> Tag Html von C# abgrenzen
+		}
+		else
+		{
+			<text>Customers</text>
+		}
+	</title>
+</head>
+<body>
+	<div>
+		<header>
+			<nav>
+				<a href="/">Home</a>
+				<a href="/Customers">Customers</a>
+			</nav>
+		</header>
+	</div>
+	<div>
+		<main>
+			@RenderBody()
+		</main>
+	</div>
+	<footer>
+		<div>
+			<span>
+				&copy; 2023 Northwind Traders
+			</span>
+		</div>
+	</footer>
+	@RenderSection("Scripts", false)  <!--Hier werden JavaScript Blöcke geladen aus den einzelnen ASP Pages-->
+</body>
+</html>

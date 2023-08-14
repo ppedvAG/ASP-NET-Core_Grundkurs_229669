@@ -1,0 +1,56 @@
+﻿@model Customer
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+		<!--
+			Tag Helper: ASP-spezifische Tags
+			Müssen aktiviert werden
+			_ViewImports.cshtml im Views Ordner erstellen
+			@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+			Wenn diese aktiviert werden, färben sich die ASP Attribute
+		-->
+        <form asp-action="Create" asp-controller="Customers">  <!--Leite die Daten an CustomerController -> Create (POST) weiter-->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>  <!--asp-for: Verbindet ein Feld in der View mit dem Model-->
+                <input asp-for="CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerId" class="text-danger"></span> <!--Validation damit die Werte valide sind, prüft auch auf der Datenbank ob die Werte valide sind-->
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactName" class="control-label"></label>
+                <textarea asp-for="ContactName" class="form-control"></textarea>
+                <span asp-validation-for="ContactName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostalCode" class="control-label"></label>
+                <input asp-for="PostalCode" class="form-control" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+	<a asp-action="Index" asp-controller="Home">Back to Home</a>
+	<a asp-action="Customers" asp-controller="Customers">Back to List</a>
+</div>
