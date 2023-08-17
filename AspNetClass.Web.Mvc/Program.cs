@@ -1,7 +1,9 @@
 using AspNetClass.DataAccess.Models;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net;
 
 namespace AspNetClass.Web.Mvc
 {
@@ -28,6 +30,20 @@ namespace AspNetClass.Web.Mvc
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}"
             );
+
+			app.UseStatusCodePagesWithRedirects("/Error/{0}");
+
+			app.UseExceptionHandler(builder =>
+			{
+				builder.Run(async context => //context: Die HTTP Message
+				{
+					context.Response.StatusCode = (int) HttpStatusCode.InternalServerError; //Neuen StatusCode schreiben
+
+					IExceptionHandlerFeature exception = context.Features.Get<IExceptionHandlerFeature>(); //Das Exception Objekt holen
+
+					await context.Response.WriteAsync(exception.Error.Message); //Die Exception in die Response schreiben
+				});
+			});
 
             app.Run();
         }

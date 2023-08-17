@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Order>
+
+<div>
+	<h4>Order Details</h4>
+	@foreach (Order order in Model)
+	{
+		<div>
+			<h5>@order.OrderId</h5>
+			<h5>@order.OrderDate</h5>
+			<h5>@order.ShippedDate</h5>
+		</div>
+	}
+</div>

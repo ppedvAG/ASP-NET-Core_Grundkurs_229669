@@ -51,7 +51,7 @@ namespace AspNetClass.Web.Mvc.Controllers
 			{
 				return View(nameof(Edit), cust);
 			}
-			return NotFound(); //Für beliebige StatusCodes kann die Methode StatusCode(<Code>) verwendet werden
+			return StatusCode(500); //Für beliebige StatusCodes kann die Methode StatusCode(<Code>) verwendet werden
 		}
 
 		[HttpPost]

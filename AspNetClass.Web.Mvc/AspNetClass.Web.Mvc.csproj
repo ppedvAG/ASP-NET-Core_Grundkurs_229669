@@ -21,8 +21,4 @@
     <ProjectReference Include="..\AspNetClass.DataAccess\AspNetClass.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\js\" />
-  </ItemGroup>
-
 </Project>
